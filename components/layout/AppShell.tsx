@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield } from "lucide-react";
+import Image from "next/image";
 
 import { CipherLibrary } from "@/components/sidebar/CipherLibrary";
 import { InputPanel } from "@/components/panels/InputPanel";
@@ -16,16 +16,21 @@ export function AppShell() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/40">
       <header className="border-b border-border/70 bg-card/40 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-3 px-4 py-3">
+        <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-3 px-4 py-1">
           <motion.div
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35 }}
             className="flex min-w-0 items-center gap-3"
           >
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary shadow-inner">
-              <Shield className="h-5 w-5" aria-hidden />
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt=""
+              width={128}
+              height={128}
+              className="h-32 w-32 shrink-0 object-contain"
+              priority
+            />
             <h1 className="text-lg font-semibold tracking-tight text-foreground">
               CipherStack
             </h1>
@@ -34,38 +39,28 @@ export function AppShell() {
         </div>
       </header>
 
-      <main className="mx-auto grid max-w-[1600px] gap-6 px-4 py-6 lg:grid-cols-[280px_1fr_340px]">
-        <aside className="space-y-4 lg:sticky lg:top-6 lg:self-start">
+      <main className="mx-auto grid max-w-[1600px] gap-6 px-4 py-6 lg:grid-cols-[280px_1fr_340px] lg:grid-rows-1 lg:h-[calc(100dvh-12rem)] lg:min-h-0">
+        <aside className="space-y-4 lg:sticky lg:top-6 lg:min-h-0 lg:max-h-full lg:overflow-y-auto lg:self-start">
           <CipherLibrary />
           <InspectorPanel />
         </aside>
 
-        <section className="space-y-4 min-w-0">
+        <section className="flex h-full min-h-0 min-w-0 flex-col gap-4 lg:min-h-0 lg:overflow-hidden">
           <ValidationBanner />
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: 0.05 }}
-            className="h-[520px] lg:h-[calc(100vh-168px)] lg:min-h-[480px]"
+            className="min-h-[280px] flex-1 lg:min-h-0"
           >
             <PipelineCanvas />
           </motion.div>
-          <div className="grid gap-4 md:grid-cols-2">
-            <InputPanel />
-            <OutputPanel />
-          </div>
         </section>
 
-        <aside className="space-y-4 lg:sticky lg:top-6 lg:self-start">
+        <aside className="space-y-4 lg:sticky lg:top-6 lg:min-h-0 lg:max-h-full lg:overflow-y-auto lg:self-start">
+          <InputPanel />
+          <OutputPanel />
           <TracePanel />
-          <div className="rounded-lg border border-dashed border-border/70 bg-secondary/15 px-3 py-3 text-xs text-muted-foreground">
-            <p className="font-medium text-foreground">Round-trip guarantee</p>
-            <p className="mt-1 leading-relaxed">
-              Encrypt with the stack, copy the ciphertext, switch to Decrypt, and
-              paste — you should recover the original plaintext byte-for-byte when
-              all configs stay identical.
-            </p>
-          </div>
         </aside>
       </main>
     </div>

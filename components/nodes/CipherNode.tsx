@@ -25,17 +25,17 @@ function CipherNodeInner({ id, data, selected }: NodeProps<CipherFlowNode>) {
   return (
     <div
       className={cn(
-        "min-w-[220px] max-w-[260px] rounded-xl border bg-card/95 p-3 shadow-lg backdrop-blur-sm transition-shadow",
+        "min-w-[220px] max-w-[260px] rounded-xl border bg-gradient-to-br from-card from-35% via-card/98 to-secondary/30 p-3 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.55)] backdrop-blur-sm transition-[box-shadow,transform] duration-200",
         selected
-          ? "border-primary ring-2 ring-primary/40 shadow-primary/10"
-          : "border-border/90 hover:border-border",
+          ? "border-primary/90 ring-2 ring-primary/45 shadow-[0_0_0_1px_hsl(188_78%_48%_/_0.25),0_12px_40px_-14px_hsl(188_78%_25%_/_0.35)]"
+          : "border-border/70 hover:border-primary/35 hover:shadow-[0_10px_36px_-14px_rgba(0,0,0,0.5)]",
       )}
       onClick={() => select(id)}
     >
       <Handle
         type="target"
         position={Position.Top}
-        className="!h-2.5 !w-2.5 !border-2 !border-primary/60 !bg-background"
+        className="h-3! w-3! border-2! border-primary/70! bg-background! shadow-[0_0_10px_hsl(188_78%_48%_/_0.35)]"
       />
       <div className="flex items-start justify-between gap-2">
         <div>
@@ -96,7 +96,7 @@ function CipherNodeInner({ id, data, selected }: NodeProps<CipherFlowNode>) {
       <Handle
         type="source"
         position={Position.Bottom}
-        className="!h-2.5 !w-2.5 !border-2 !border-primary/60 !bg-background"
+        className="h-3! w-3! border-2! border-primary/70! bg-background! shadow-[0_0_10px_hsl(188_78%_48%_/_0.35)]"
       />
     </div>
   );

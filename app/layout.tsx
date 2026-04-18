@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: "CipherStack",
   description:
     "Compose reversible cipher pipelines with React Flow, Zustand, and a pluggable cipher engine.",
+  icons: {
+    icon: "/images/FavIcon.png",
+    apple: "/images/FavIcon.png",
+  },
 };
 
 export default function RootLayout({

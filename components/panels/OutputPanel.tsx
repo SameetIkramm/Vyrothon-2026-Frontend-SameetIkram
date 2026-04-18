@@ -69,7 +69,7 @@ export function OutputPanel() {
             readOnly
             value={finalOutput}
             placeholder="Output appears after a successful run."
-            className="min-h-[120px] font-mono text-xs leading-relaxed"
+            className="min-h-[68px] max-h-[132px] resize-y overflow-y-auto font-mono text-xs leading-relaxed"
           />
         </CardContent>
       </Card>

@@ -32,7 +32,7 @@ export function InputPanel() {
             value={plaintext}
             onChange={(e) => setPlaintext(e.target.value)}
             spellCheck={false}
-            className="min-h-[120px] font-mono text-xs leading-relaxed"
+            className="min-h-[68px] max-h-[132px] resize-y overflow-y-auto font-mono text-xs leading-relaxed"
           />
         </CardContent>
       </Card>
