@@ -26,7 +26,7 @@ export function CipherLibrary() {
         </CardDescription>
       </CardHeader>
       <CardContent className="p-0">
-        <ScrollArea className="h-[280px] px-4 pb-4">
+        <ScrollArea className="h-[200px] max-h-[42vh] px-4 pb-4 sm:h-[260px] sm:max-h-none lg:h-[280px]">
           <ul className="space-y-2">
             {CIPHER_LIST.map((c) => (
               <li

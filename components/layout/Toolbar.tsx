@@ -72,16 +72,16 @@ export function Toolbar() {
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-2 rounded-xl border border-border/70 bg-card/60 px-3 py-2 backdrop-blur-sm">
+    <div className="flex flex-wrap items-center gap-1.5 rounded-xl border border-border/70 bg-card/60 px-2 py-2 backdrop-blur-sm sm:gap-2 sm:px-3">
       <Tabs
         value={mode}
         onValueChange={(v) => setMode(v as "encrypt" | "decrypt")}
       >
         <TabsList className="h-9">
-          <TabsTrigger value="encrypt" className="px-4 text-xs">
+          <TabsTrigger value="encrypt" className="px-3 text-xs sm:px-4">
             Encrypt
           </TabsTrigger>
-          <TabsTrigger value="decrypt" className="px-4 text-xs">
+          <TabsTrigger value="decrypt" className="px-3 text-xs sm:px-4">
             Decrypt
           </TabsTrigger>
         </TabsList>
@@ -135,7 +135,8 @@ export function Toolbar() {
         }}
       >
         <RotateCcw className="h-3.5 w-3.5" />
-        Reset sample
+        <span className="sm:hidden">Reset</span>
+        <span className="hidden sm:inline">Reset sample</span>
       </Button>
 
       <Separator orientation="vertical" className="mx-1 hidden h-7 lg:block" />

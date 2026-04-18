@@ -19,7 +19,7 @@ export function TracePanel() {
 
   return (
     <Card className="border-border/70">
-      <CardHeader className="flex flex-row items-start justify-between gap-3 pb-2">
+      <CardHeader className="flex flex-col gap-3 pb-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <CardTitle className="text-sm">Execution trace</CardTitle>
           <CardDescription>
@@ -31,7 +31,7 @@ export function TracePanel() {
           type="button"
           size="sm"
           variant="outline"
-          className="shrink-0 gap-1"
+          className="w-full shrink-0 gap-1 sm:w-auto"
           disabled={!trace.length}
           onClick={() => animateTrace()}
         >
@@ -40,7 +40,7 @@ export function TracePanel() {
         </Button>
       </CardHeader>
       <CardContent className="p-0">
-        <ScrollArea className="h-[320px]">
+        <ScrollArea className="h-[220px] max-h-[45vh] sm:h-[280px] sm:max-h-none lg:h-[320px]">
           <div className="space-y-2 px-4 pb-4">
             {trace.length === 0 && (
               <p className="text-sm text-muted-foreground">

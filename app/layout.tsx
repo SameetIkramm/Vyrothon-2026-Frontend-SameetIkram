@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import { AppProviders } from "@/components/providers/AppProviders";
@@ -25,6 +25,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,7 +40,7 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${geistSans.className} ${geistMono.variable} min-h-screen antialiased`}
+        className={`${geistSans.className} ${geistMono.variable} min-h-screen overflow-x-hidden antialiased pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] pt-[env(safe-area-inset-top)]`}
       >
         <AppProviders>{children}</AppProviders>
       </body>

@@ -117,11 +117,11 @@ export function PipelineCanvas() {
             color="hsl(217 33% 26%)"
           />
           <Controls
-            className="m-3! rounded-lg! border-border! bg-card/92! shadow-md! backdrop-blur-sm"
+            className="m-2! rounded-lg! border-border! bg-card/92! shadow-md! backdrop-blur-sm sm:m-3!"
             showInteractive={false}
           />
           <MiniMap
-            className="rounded-lg! border! border-border/70! bg-card/90! shadow-lg backdrop-blur-sm"
+            className="hidden rounded-lg! border! border-border/70! bg-card/90! shadow-lg backdrop-blur-sm sm:block"
             nodeStrokeWidth={1.5}
             nodeColor="hsl(188 78% 44%)"
             nodeStrokeColor="hsl(188 78% 28%)"

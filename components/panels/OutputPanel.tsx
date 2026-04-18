@@ -37,7 +37,7 @@ export function OutputPanel() {
   return (
     <motion.div layout>
       <Card className="border-border/70">
-        <CardHeader className="flex flex-row items-start justify-between gap-3 pb-2">
+        <CardHeader className="flex flex-col gap-3 pb-2 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <CardTitle className="text-sm">Output</CardTitle>
             <CardDescription>
@@ -52,7 +52,7 @@ export function OutputPanel() {
             type="button"
             size="sm"
             variant="secondary"
-            className="shrink-0 gap-1.5"
+            className="w-full shrink-0 gap-1.5 sm:w-auto"
             onClick={copy}
           >
             {copied ? (
