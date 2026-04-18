@@ -98,7 +98,7 @@ export function PipelineCanvas() {
           defaultEdgeOptions={defaultEdgeOptions}
           fitView
           proOptions={{ hideAttribution: true }}
-          nodesDraggable
+          nodesDraggable={false}
           nodesConnectable={false}
           elementsSelectable
           panOnScroll
@@ -106,7 +106,7 @@ export function PipelineCanvas() {
           translateExtent={translateExtent}
           minZoom={0.55}
           maxZoom={1.15}
-          className="bg-transparent!"
+          className="dark bg-transparent!"
         >
           <FitViewOnNodes count={nodes.length} />
           <Background

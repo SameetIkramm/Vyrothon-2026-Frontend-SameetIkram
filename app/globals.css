@@ -81,4 +81,9 @@
   *::-webkit-scrollbar-corner {
     background: hsl(222 40% 8%);
   }
+
+  /* React Flow: dark control styling (readable icons) while keeping the pane transparent */
+  .react-flow.dark {
+    --xy-background-color: transparent;
+  }
 }
