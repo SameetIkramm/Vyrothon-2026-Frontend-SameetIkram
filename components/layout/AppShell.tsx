@@ -16,28 +16,19 @@ export function AppShell() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/40">
       <header className="border-b border-border/70 bg-card/40 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1600px] flex-col gap-4 px-4 py-5 md:flex-row md:items-center md:justify-between">
+        <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-3 px-4 py-3">
           <motion.div
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35 }}
-            className="flex items-start gap-3"
+            className="flex min-w-0 items-center gap-3"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary shadow-inner">
-              <Shield className="h-6 w-6" aria-hidden />
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary shadow-inner">
+              <Shield className="h-5 w-5" aria-hidden />
             </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                CipherStack
-              </p>
-              <h1 className="text-xl font-semibold tracking-tight md:text-2xl">
-                Cascade encryption builder
-              </h1>
-              <p className="mt-1 max-w-xl text-sm text-muted-foreground">
-                Compose reversible cipher pipelines visually. Encrypt forward,
-                decrypt in reverse — same configuration, exact recovery.
-              </p>
-            </div>
+            <h1 className="text-lg font-semibold tracking-tight text-foreground">
+              CipherStack
+            </h1>
           </motion.div>
           <Toolbar />
         </div>
@@ -55,7 +46,7 @@ export function AppShell() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: 0.05 }}
-            className="h-[520px] lg:h-[calc(100vh-200px)] lg:min-h-[480px]"
+            className="h-[520px] lg:h-[calc(100vh-168px)] lg:min-h-[480px]"
           >
             <PipelineCanvas />
           </motion.div>

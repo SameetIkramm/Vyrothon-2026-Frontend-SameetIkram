@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CipherStack — Cascade encryption builder",
+  title: "CipherStack",
   description:
     "Compose reversible cipher pipelines with React Flow, Zustand, and a pluggable cipher engine.",
 };
@@ -27,8 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${geistSans.className} ${geistMono.variable} min-h-screen antialiased`}
       >
         <AppProviders>{children}</AppProviders>
